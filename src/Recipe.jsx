@@ -1,12 +1,19 @@
 import React from 'react';
 
 
-const Recipe = ({title, time, image}) => {
+const Recipe = ({title, time, image, link, ingredients}) => {
   return (
     <div className="recipe-outer">
       <h1 className="title">{title}</h1>
-      <p className="time">Total Time: {time}</p>
-      <img src={image} alt="" />
+      <ul className="ingredients">
+        {ingredients.map(ingredient => (
+          <li className="ingredient.text">{ingredient.text}</li>
+        ))}
+      </ul>
+      <p className="time">Total Time: {time} mins</p>
+     <a href={link}>
+     <img src={image} alt="" />
+     </a>
     </div>
   )
 }

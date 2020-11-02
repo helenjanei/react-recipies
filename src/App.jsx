@@ -32,6 +32,7 @@ const updateSearch = e => {
 const getSearch = e => {
   e.preventDefault();
 setQuery(search)
+setSearch('');
 }
 
 return (
@@ -42,7 +43,8 @@ return (
 </form>
 {recipes.map(recipe => (
   <Recipe title={recipe.recipe.label} time={recipe.recipe.totalTime}
-  image={recipe.recipe.image} key={recipe.recipe.label} 
+  image={recipe.recipe.image} key={recipe.recipe.label} link={recipe.recipe.url}
+  ingredients={recipe.recipe.ingredients}
   />
 ))}
 </div>
